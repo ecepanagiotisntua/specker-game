@@ -48,6 +48,25 @@ void Game::addPlayer(Player *player) throw(logic_error){
     player_count++;
   }
   
+void Game::play(ostream &out) throw(logic_error){
+  if(player_count != players || heap_count != heaps) throw logic_error("Not enough players yet");
+  else{
+    State game(heaps, heap_coins []);
+    int i = 0;
+    while(!game.winning()){
+      out << "State: " << game << endl;
+      out << *player_table[i] << " " << player_table[i]->play(game) << endl;
+      game.next(player_table[i]->play(game));
+      
+      i++;
+    }
+    out << "State: " << game << endl;
+    i--;
+    out << *player[i] << " wins" << endl;
+  }
+}
+  
+  
   
     
 
