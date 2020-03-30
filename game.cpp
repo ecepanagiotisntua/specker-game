@@ -69,7 +69,7 @@ void Game::play(ostream &out) throw(logic_error){
     }
     out << "State: " << game << endl;
     i--;
-    out << *player[i] << " wins" << endl;
+    out << *player_table[i] << " wins" << endl;
   }
 }
   
