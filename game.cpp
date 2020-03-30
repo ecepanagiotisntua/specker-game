@@ -52,6 +52,8 @@ void Game::addPlayer(Player *player) throw(logic_error){
     player_table[player_count] = player;
     player_count++;
   }
+}
+
   
 void Game::play(ostream &out) throw(logic_error){
   if(player_count != players || heap_count != heaps) throw logic_error("Not enough players yet");
