@@ -62,14 +62,14 @@ void Game::play(ostream &out) throw(logic_error){
     int i = 0;
     while(!game.winning()){
       out << "State: " << game << endl;
-      out << *player_table[i] << " " << player_table[i]->play(game) << endl;
-      game.next(player_table[i]->play(game));
+      out << *player_table[i%players] << " " << player_table[i%players]->play(game) << endl;
+      game.next(player_table[i%players]->play(game));
       
       i++;
     }
     out << "State: " << game << endl;
     i--;
-    out << *player_table[i] << " wins" << endl;
+    out << *player_table[i%players] << " wins" << endl;
   }
 }
   
