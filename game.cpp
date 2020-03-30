@@ -9,7 +9,7 @@ private:
 int players;
 int heaps;
 int heap_count;
-int players_count;
+int player_count;
 int *heap_coins;
 Player **player_table;
 
