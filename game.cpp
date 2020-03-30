@@ -1,3 +1,8 @@
+#include <iostream>
+#include <stdexcept>
+
+using namespace std;
+
 class Game {
 
 private:
